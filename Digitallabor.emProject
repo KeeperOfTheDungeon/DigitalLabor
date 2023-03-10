@@ -1,0 +1,427 @@
+<!DOCTYPE CrossStudio_Project_File>
+<solution Name="Digitallabor" target="8" version="2">
+  <configuration
+    Name="Debug"
+    c_preprocessor_definitions="DEBUG"
+    debug_target_connection="GDB Server"
+    gcc_debugging_level="Level 3"
+    gcc_omit_frame_pointer="Yes"
+    gcc_optimization_level="None" />
+  <configuration
+    Name="Release"
+    c_preprocessor_definitions="NDEBUG"
+    gcc_debugging_level="Level 2"
+    gcc_omit_frame_pointer="Yes"
+    gcc_optimization_level="Level 2 balanced" />
+  <project Name="Aufgabe1">
+    <configuration
+      LIBRARY_IO_TYPE="None"
+      Name="Common"
+      arm_architecture="v4T"
+      arm_compiler_variant="gcc"
+      arm_core_type="ARM7TDMI-S"
+      arm_endian="Little"
+      arm_fpu_type=""
+      arm_instruction_set="Thumb"
+      arm_linker_fiq_stack_size="0"
+      arm_linker_heap_size="2048"
+      arm_linker_irq_stack_size="0"
+      arm_linker_stack_size="2048"
+      arm_linker_variant="GNU"
+      arm_target_device_name="LPC2129"
+      arm_target_interface_type="JTAG"
+      debug_stack_pointer_start="__stack_end__"
+      debug_target_connection="J-Link"
+      gcc_entry_point="Reset_Handler"
+      link_dedupe_code="Yes"
+      link_linker_script_file="Setup/SEGGER_Flash_ARM.icf"
+      linker_output_format="hex"
+      linker_section_placement_file="Setup/sram_placement.xml"
+      linker_section_placements_segments="FLASH1 RX 0x00000000 0x0003e000;RAM1 RWX 0x40000000 0x00004000;"
+      project_directory=""
+      project_type="Executable" />
+    <configuration
+      Name="Debug"
+      arm_instruction_set="ARM"
+      debug_initial_breakpoint="_start"
+      debug_startup_completion_point="_start" />
+    <folder Name="Setup">
+      <file file_name="Setup/sram_placement.xml" />
+    </folder>
+    <folder Name="Source">
+      <file file_name="Source/Aufgabe1_1.s" />
+    </folder>
+    <folder Name="System">
+      <file file_name="System/ARM_Startup.s" />
+      <file file_name="System/crt0.s" />
+    </folder>
+  </project>
+  <project Name="Aufgabe2">
+    <configuration
+      LIBRARY_IO_TYPE="None"
+      Name="Common"
+      arm_architecture="v4T"
+      arm_compiler_variant="gcc"
+      arm_core_type="ARM7TDMI-S"
+      arm_endian="Little"
+      arm_fpu_type=""
+      arm_instruction_set="Thumb"
+      arm_linker_fiq_stack_size="0"
+      arm_linker_heap_size="2048"
+      arm_linker_irq_stack_size="0"
+      arm_linker_stack_size="2048"
+      arm_linker_variant="GNU"
+      arm_target_device_name="LPC2129"
+      arm_target_interface_type="JTAG"
+      debug_stack_pointer_start="__stack_end__"
+      debug_target_connection="GDB Server"
+      gcc_entry_point="Reset_Handler"
+      link_dedupe_code="Yes"
+      link_linker_script_file="Setup/SEGGER_Flash_ARM.icf"
+      linker_output_format="hex"
+      linker_section_placement_file="Setup/sram_placement.xml"
+      linker_section_placements_segments="FLASH1 RX 0x00000000 0x0003e000;RAM1 RWX 0x40000000 0x00004000;"
+      project_directory=""
+      project_type="Executable" />
+    <configuration
+      Name="Debug"
+      debug_initial_breakpoint="_start"
+      debug_startup_completion_point="_start"
+      debug_target_connection="Simulator" />
+    <folder Name="Setup">
+      <file file_name="Setup/sram_placement.xml" />
+    </folder>
+    <folder Name="Source">
+      <file file_name="Source/Aufgabe2_1.s" />
+      <file file_name="Source/Aufgabe2_2.s">
+        <configuration Name="Debug" build_exclude_from_build="Yes" />
+      </file>
+      <file file_name="Source/Aufgabe2_3.s">
+        <configuration Name="Debug" build_exclude_from_build="Yes" />
+      </file>
+    </folder>
+    <folder Name="System">
+      <file file_name="System/ARM_Startup.s" />
+      <file file_name="System/crt0.s" />
+    </folder>
+  </project>
+  <project Name="Aufgabe3">
+    <configuration
+      LIBRARY_IO_TYPE="None"
+      Name="Common"
+      arm_architecture="v4T"
+      arm_compiler_variant="gcc"
+      arm_core_type="ARM7TDMI-S"
+      arm_endian="Little"
+      arm_fpu_type=""
+      arm_instruction_set="Thumb"
+      arm_linker_fiq_stack_size="0"
+      arm_linker_heap_size="2048"
+      arm_linker_irq_stack_size="0"
+      arm_linker_stack_size="2048"
+      arm_linker_variant="GNU"
+      arm_target_device_name="LPC2129"
+      arm_target_interface_type="JTAG"
+      debug_stack_pointer_start="__stack_end__"
+      debug_target_connection="Simulator"
+      gcc_entry_point="Reset_Handler"
+      link_dedupe_code="Yes"
+      link_linker_script_file="Setup/SEGGER_Flash_ARM.icf"
+      linker_output_format="hex"
+      linker_section_placement_file="Setup/sram_placement.xml"
+      linker_section_placements_segments="FLASH1 RX 0x00000000 0x0003e000;RAM1 RWX 0x40000000 0x00004000;"
+      project_directory=""
+      project_type="Executable" />
+    <configuration
+      Name="Debug"
+      debug_initial_breakpoint="_start"
+      debug_startup_completion_point="_start" />
+    <folder Name="Setup">
+      <file file_name="Setup/sram_placement.xml" />
+    </folder>
+    <folder Name="Source">
+      <file file_name="Source/Aufgabe3_1.s" />
+      <file file_name="Source/Aufgabe3_2.s" />
+      <file file_name="Source/Aufgabe3_3.s" />
+    </folder>
+    <folder Name="System">
+      <file file_name="System/ARM_Startup.s" />
+      <file file_name="System/crt0.s" />
+    </folder>
+  </project>
+  <project Name="Aufgabe4">
+    <configuration
+      LIBRARY_IO_TYPE="None"
+      Name="Common"
+      arm_architecture="v4T"
+      arm_compiler_variant="gcc"
+      arm_core_type="ARM7TDMI-S"
+      arm_endian="Little"
+      arm_fpu_type=""
+      arm_instruction_set="Thumb"
+      arm_linker_fiq_stack_size="0"
+      arm_linker_heap_size="2048"
+      arm_linker_irq_stack_size="0"
+      arm_linker_stack_size="2048"
+      arm_linker_variant="SEGGER"
+      arm_target_device_name="LPC2129"
+      arm_target_interface_type="JTAG"
+      debug_stack_pointer_start="__stack_end__"
+      debug_target_connection="Simulator"
+      gcc_entry_point="Reset_Handler"
+      link_dedupe_code="Yes"
+      link_linker_script_file="Setup/SEGGER_Flash_ARM.icf"
+      linker_output_format="hex"
+      linker_section_placements_segments="FLASH1 RX 0x00000000 0x0003e000;RAM1 RWX 0x40000000 0x00004000;"
+      project_directory=""
+      project_type="Executable" />
+    <configuration Name="Release" link_dedupe_code="Yes" />
+    <folder Name="Setup">
+      <file file_name="Setup/SEGGER_Flash_ARM.icf" />
+    </folder>
+    <folder Name="Source">
+      <file file_name="Source/Aufgabe4_1.s" />
+      <file file_name="Source/Aufgabe4_2.s" />
+      <file file_name="Source/Aufgabe4_3.s" />
+    </folder>
+    <folder Name="System">
+      <file file_name="System/ARM_Startup.s" />
+      <file file_name="System/SEGGER_ARM_Startup.s" />
+    </folder>
+  </project>
+  <project Name="Aufgabe5">
+    <configuration
+      LIBRARY_IO_TYPE="None"
+      Name="Common"
+      arm_architecture="v4T"
+      arm_compiler_variant="gcc"
+      arm_core_type="ARM7TDMI-S"
+      arm_endian="Little"
+      arm_fpu_type=""
+      arm_instruction_set="Thumb"
+      arm_linker_fiq_stack_size="0"
+      arm_linker_heap_size="2048"
+      arm_linker_irq_stack_size="0"
+      arm_linker_stack_size="2048"
+      arm_linker_variant="GNU"
+      arm_target_device_name="LPC2129"
+      arm_target_interface_type="JTAG"
+      debug_stack_pointer_start="__stack_end__"
+      debug_target_connection="GDB Server"
+      gcc_entry_point="Reset_Handler"
+      link_dedupe_code="Yes"
+      link_linker_script_file="Setup/SEGGER_Flash_ARM.icf"
+      linker_output_format="hex"
+      linker_section_placement_file="Setup/sram_placement.xml"
+      linker_section_placements_segments="FLASH1 RX 0x00000000 0x0003e000;RAM1 RWX 0x40000000 0x00004000;"
+      project_directory=""
+      project_type="Executable" />
+    <folder Name="Setup">
+      <file file_name="Setup/sram_placement.xml" />
+    </folder>
+    <folder Name="Source">
+      <file file_name="Source/Aufgabe5_1.s" />
+      <file file_name="Source/Aufgabe5_2.s" />
+      <file file_name="Source/Aufgabe5_3.s" />
+    </folder>
+    <folder Name="System">
+      <file file_name="System/ARM_Startup.s" />
+      <file file_name="System/crt0.s" />
+    </folder>
+  </project>
+  <project Name="Aufgabe6">
+    <configuration
+      LIBRARY_IO_TYPE="None"
+      Name="Common"
+      arm_architecture="v4T"
+      arm_compiler_variant="gcc"
+      arm_core_type="ARM7TDMI-S"
+      arm_endian="Little"
+      arm_fpu_type=""
+      arm_instruction_set="Thumb"
+      arm_linker_fiq_stack_size="0"
+      arm_linker_heap_size="2048"
+      arm_linker_irq_stack_size="0"
+      arm_linker_stack_size="2048"
+      arm_linker_variant="GNU"
+      arm_target_device_name="LPC2129"
+      arm_target_interface_type="JTAG"
+      debug_stack_pointer_start="__stack_end__"
+      debug_target_connection="GDB Server"
+      gcc_entry_point="Reset_Handler"
+      link_dedupe_code="Yes"
+      link_linker_script_file="Setup/SEGGER_Flash_ARM.icf"
+      linker_output_format="hex"
+      linker_section_placement_file="Setup/sram_placement.xml"
+      linker_section_placements_segments="FLASH1 RX 0x00000000 0x0003e000;RAM1 RWX 0x40000000 0x00004000;"
+      project_directory=""
+      project_type="Executable" />
+    <folder Name="Setup">
+      <file file_name="Setup/sram_placement.xml" />
+    </folder>
+    <folder Name="Source">
+      <file file_name="Source/Aufgabe6.s" />
+    </folder>
+    <folder Name="System">
+      <file file_name="System/ARM_Startup.s" />
+      <file file_name="System/crt0.s" />
+    </folder>
+  </project>
+  <project Name="Aufgabe7">
+    <configuration
+      LIBRARY_IO_TYPE="None"
+      Name="Common"
+      arm_architecture="v4T"
+      arm_compiler_variant="gcc"
+      arm_core_type="ARM7TDMI-S"
+      arm_endian="Little"
+      arm_fpu_type=""
+      arm_instruction_set="Thumb"
+      arm_linker_fiq_stack_size="0"
+      arm_linker_heap_size="2048"
+      arm_linker_irq_stack_size="0"
+      arm_linker_stack_size="2048"
+      arm_linker_variant="GNU"
+      arm_target_device_name="LPC2129"
+      arm_target_interface_type="JTAG"
+      debug_stack_pointer_start="__stack_end__"
+      debug_target_connection="GDB Server"
+      gcc_entry_point="Reset_Handler"
+      link_dedupe_code="Yes"
+      link_linker_script_file="Setup/SEGGER_Flash_ARM.icf"
+      linker_output_format="hex"
+      linker_section_placement_file="Setup/sram_placement.xml"
+      linker_section_placements_segments="FLASH1 RX 0x00000000 0x0003e000;RAM1 RWX 0x40000000 0x00004000;"
+      project_directory=""
+      project_type="Executable" />
+    <folder Name="Setup">
+      <file file_name="Setup/sram_placement.xml" />
+    </folder>
+    <folder Name="Source">
+      <file file_name="Source/Aufgabe7_1.c" />
+      <file file_name="Source/Aufgabe7_2.c" />
+      <file file_name="Source/Aufgabe7_3.c" />
+    </folder>
+    <folder Name="System">
+      <file file_name="System/ARM_Startup.s" />
+      <file file_name="System/crt0.s" />
+    </folder>
+  </project>
+  <project Name="Aufgabe8">
+    <configuration
+      LIBRARY_IO_TYPE="None"
+      Name="Common"
+      arm_architecture="v4T"
+      arm_compiler_variant="gcc"
+      arm_core_type="ARM7TDMI-S"
+      arm_endian="Little"
+      arm_fpu_type=""
+      arm_instruction_set="Thumb"
+      arm_linker_fiq_stack_size="0"
+      arm_linker_heap_size="2048"
+      arm_linker_irq_stack_size="0"
+      arm_linker_stack_size="2048"
+      arm_linker_variant="GNU"
+      arm_target_device_name="LPC2129"
+      arm_target_interface_type="JTAG"
+      debug_stack_pointer_start="__stack_end__"
+      debug_target_connection="GDB Server"
+      gcc_entry_point="Reset_Handler"
+      link_dedupe_code="Yes"
+      link_linker_script_file="Setup/SEGGER_Flash_ARM.icf"
+      linker_output_format="hex"
+      linker_section_placement_file="Setup/sram_placement.xml"
+      linker_section_placements_segments="FLASH1 RX 0x00000000 0x0003e000;RAM1 RWX 0x40000000 0x00004000;"
+      project_directory=""
+      project_type="Executable" />
+    <folder Name="Setup">
+      <file file_name="Setup/sram_placement.xml" />
+    </folder>
+    <folder Name="Source">
+      <file file_name="Source/Aufgabe8.c" />
+    </folder>
+    <folder Name="System">
+      <file file_name="System/ARM_Startup.s" />
+      <file file_name="System/crt0.s" />
+    </folder>
+  </project>
+  <project Name="Aufgabe9">
+    <configuration
+      LIBRARY_IO_TYPE="None"
+      Name="Common"
+      arm_architecture="v4T"
+      arm_compiler_variant="gcc"
+      arm_core_type="ARM7TDMI-S"
+      arm_endian="Little"
+      arm_fpu_type=""
+      arm_instruction_set="Thumb"
+      arm_linker_fiq_stack_size="0"
+      arm_linker_heap_size="2048"
+      arm_linker_irq_stack_size="0"
+      arm_linker_stack_size="2048"
+      arm_linker_variant="GNU"
+      arm_target_device_name="LPC2129"
+      arm_target_interface_type="JTAG"
+      debug_stack_pointer_start="__stack_end__"
+      debug_target_connection="GDB Server"
+      gcc_entry_point="Reset_Handler"
+      link_dedupe_code="Yes"
+      link_linker_script_file="Setup/SEGGER_Flash_ARM.icf"
+      linker_output_format="hex"
+      linker_section_placement_file="Setup/sram_placement.xml"
+      linker_section_placements_segments="FLASH1 RX 0x00000000 0x0003e000;RAM1 RWX 0x40000000 0x00004000;"
+      project_directory=""
+      project_type="Executable" />
+    <folder Name="Setup">
+      <file file_name="Setup/sram_placement.xml" />
+    </folder>
+    <folder Name="Source">
+      <file file_name="Source/Aufgabe9.c" />
+    </folder>
+    <folder Name="System">
+      <file file_name="System/ARM_Startup.s" />
+      <file file_name="System/crt0.s" />
+    </folder>
+  </project>
+  <project Name="BeispielAufgabe">
+    <configuration
+      LIBRARY_IO_TYPE="None"
+      Name="Common"
+      arm_architecture="v4T"
+      arm_compiler_variant="gcc"
+      arm_core_type="ARM7TDMI-S"
+      arm_endian="Little"
+      arm_fpu_type=""
+      arm_instruction_set="Thumb"
+      arm_linker_fiq_stack_size="0"
+      arm_linker_heap_size="2048"
+      arm_linker_irq_stack_size="0"
+      arm_linker_stack_size="2048"
+      arm_linker_variant="GNU"
+      arm_target_device_name="LPC2129"
+      arm_target_interface_type="JTAG"
+      debug_stack_pointer_start="__stack_end__"
+      debug_target_connection="GDB Server"
+      gcc_entry_point="Reset_Handler"
+      link_dedupe_code="Yes"
+      link_linker_script_file="Setup/SEGGER_Flash_ARM.icf"
+      linker_output_format="hex"
+      linker_section_placement_file="Setup/sram_placement.xml"
+      linker_section_placements_segments="FLASH1 RX 0x00000000 0x0003e000;RAM1 RWX 0x40000000 0x00004000;"
+      project_directory=""
+      project_type="Executable" />
+    <folder Name="Setup">
+      <file file_name="Setup/sram_placement.xml" />
+    </folder>
+    <folder Name="Source">
+      <file file_name="Source/BeispielAufgabe1_1.s" />
+      <file file_name="Source/BeispielAufgabe1_2.s" />
+      <file file_name="Source/BeispielAufgabe1_3.s" />
+      <file file_name="Source/BeispielAufgabe1_4.s" />
+    </folder>
+    <folder Name="System">
+      <file file_name="System/ARM_Startup.s" />
+      <file file_name="System/crt0.s" />
+    </folder>
+  </project>
+</solution>
