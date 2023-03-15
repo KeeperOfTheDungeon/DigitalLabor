@@ -175,6 +175,10 @@
       linker_section_placements_segments="FLASH1 RX 0x00000000 0x0003e000;RAM1 RWX 0x40000000 0x00004000;"
       project_directory=""
       project_type="Executable" />
+    <configuration
+      Name="Debug"
+      debug_initial_breakpoint="_start"
+      debug_startup_completion_point="_start" />
     <configuration Name="Release" link_dedupe_code="Yes" />
     <folder Name="Setup">
       <file file_name="Setup/SEGGER_Flash_ARM.icf" />
@@ -216,6 +220,10 @@
       linker_section_placements_segments="FLASH1 RX 0x00000000 0x0003e000;RAM1 RWX 0x40000000 0x00004000;"
       project_directory=""
       project_type="Executable" />
+    <configuration
+      Name="Debug"
+      debug_initial_breakpoint="_start"
+      debug_startup_completion_point="_start" />
     <folder Name="Setup">
       <file file_name="Setup/sram_placement.xml" />
     </folder>
@@ -256,6 +264,10 @@
       linker_section_placements_segments="FLASH1 RX 0x00000000 0x0003e000;RAM1 RWX 0x40000000 0x00004000;"
       project_directory=""
       project_type="Executable" />
+    <configuration
+      Name="Debug"
+      debug_initial_breakpoint="_start"
+      debug_startup_completion_point="_start" />
     <folder Name="Setup">
       <file file_name="Setup/sram_placement.xml" />
     </folder>
@@ -410,14 +422,27 @@
       linker_section_placements_segments="FLASH1 RX 0x00000000 0x0003e000;RAM1 RWX 0x40000000 0x00004000;"
       project_directory=""
       project_type="Executable" />
+    <configuration
+      Name="Debug"
+      debug_initial_breakpoint="_start"
+      debug_startup_completion_point="_start"
+      debug_target_connection="Simulator" />
     <folder Name="Setup">
       <file file_name="Setup/sram_placement.xml" />
     </folder>
     <folder Name="Source">
-      <file file_name="Source/BeispielAufgabe1_1.s" />
-      <file file_name="Source/BeispielAufgabe1_2.s" />
-      <file file_name="Source/BeispielAufgabe1_3.s" />
-      <file file_name="Source/BeispielAufgabe1_4.s" />
+      <file file_name="Source/BeispielAufgabe1_1.s">
+        <configuration Name="Debug" build_exclude_from_build="Yes" />
+      </file>
+      <file file_name="Source/BeispielAufgabe1_2.s">
+        <configuration Name="Debug" build_exclude_from_build="Yes" />
+      </file>
+      <file file_name="Source/BeispielAufgabe1_3.s">
+        <configuration Name="Debug" build_exclude_from_build="Yes" />
+      </file>
+      <file file_name="Source/BeispielAufgabe1_4.s">
+        <configuration Name="Debug" build_exclude_from_build="No" />
+      </file>
     </folder>
     <folder Name="System">
       <file file_name="System/ARM_Startup.s" />
