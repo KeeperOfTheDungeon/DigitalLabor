@@ -4,7 +4,7 @@
  *  Created on: 10.03.2023
  *      Author: tavin
  *
- *	Aufgabe : Addition
+ *	Aufgabe : Testmuster zur Steuerung einzelner I/O (Input/Output)-Bits 
  */
 .text /* Specify that code goes in text segment */
 .code 32 /* Select ARM instruction set */

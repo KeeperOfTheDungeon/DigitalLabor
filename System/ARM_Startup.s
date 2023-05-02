@@ -56,6 +56,39 @@ Additional information:
 */
 
         .syntax unified  
+ 
+ 
+ // Standard definitions of Mode bits and Interrupt (I & F) flags in PSRs
+
+        .equ    Mode_USR,       0x10
+        .equ    Mode_FIQ,       0x11
+        .equ    Mode_IRQ,       0x12
+        .equ    Mode_SVC,       0x13
+        .equ    Mode_ABT,       0x17
+        .equ    Mode_UND,       0x1B
+        .equ    Mode_SYS,       0x1F
+
+        .equ    I_Bit,          0x80    /* when I bit is set, IRQ is disabled */
+        .equ    F_Bit,          0x40    /* when F bit is set, FIQ is disabled */
+
+
+
+# Phase Locked Loop (PLL) definitions
+        .equ    PLL_BASE,       0xE01FC080  /* PLL Base Address */
+        .equ    PLLCON_OFS,     0x00        /* PLL Control Offset*/
+        .equ    PLLCFG_OFS,     0x04        /* PLL Configuration Offset */
+        .equ    PLLSTAT_OFS,    0x08        /* PLL Status Offset */
+        .equ    PLLFEED_OFS,    0x0C        /* PLL Feed Offset */
+        .equ    PLLCON_PLLE,    (1<<0)      /* PLL Enable */
+        .equ    PLLCON_PLLC,    (1<<1)      /* PLL Connect */
+        .equ    PLLCFG_MSEL,    (0x1F<<0)   /* PLL Multiplier */
+        .equ    PLLCFG_PSEL,    (0x03<<5)   /* PLL Divider */
+        .equ    PLLSTAT_PLOCK,  (1<<10)     /* PLL Lock Status */
+
+        .equ    PLL_SETUP,      1
+        .equ    PLLCFG_Val,     0x00000024		//for 12 MHz clock
+
+
         
 /*********************************************************************
 *
@@ -82,6 +115,29 @@ Additional information:
         .balign 4
 \Name:
         1: b 1b   // Endless loop
+        END_FUNC \Name
+.endm
+
+
+.macro IRQ_HANDLER Name=
+        //
+        // Insert vector in vector table
+        //
+        .section .vectors, "ax"
+         ldr     PC, =\Name
+        //
+        // Insert dummy handler in init section
+        //
+        .section .init.\Name, "ax"
+        .code 32
+        .type \Name, function
+        .weak \Name
+        .balign 4
+\Name:
+        1:ldr r1,=0xfffff030
+        2:ldr PC,[R1]
+        //1: b 1b   // Endless loop
+
         END_FUNC \Name
 .endm
 
@@ -129,7 +185,8 @@ _vectors:
         ISR_HANDLER pabort_handler
         ISR_HANDLER dabort_handler
         ISR_RESERVED
-        ISR_HANDLER irq_handler
+        IRQ_HANDLER irq_handler
+         
         ISR_HANDLER fiq_handler
 
         .section .vectors, "ax"
@@ -225,7 +282,50 @@ Reset_Handler:
         //
         // Jump to runtime initialization, which calls main().
         //
-        b       _start
+
+
+       .equ    MEMMAP, 0xE01FC040  /* Memory Mapping Control */
+
+
+
+// setup PLL
+                LDR     R0, =PLL_BASE
+                MOV     R1, #0xAA
+                MOV     R2, #0x55
+
+// Configure and Enable PLL
+                MOV     R3, #PLLCFG_Val
+                STR     R3, [R0, #PLLCFG_OFS]
+                MOV     R3, #PLLCON_PLLE
+                STR     R3, [R0, #PLLCON_OFS]
+                STR     R1, [R0, #PLLFEED_OFS]
+                STR     R2, [R0, #PLLFEED_OFS]
+
+// Wait until PLL Locked
+PLL_Loop:       LDR     R3, [R0, #PLLSTAT_OFS]
+                ANDS    R3, R3, #PLLSTAT_PLOCK
+                BEQ     PLL_Loop
+
+# Switch to PLL Clock
+                MOV     R3, #(PLLCON_PLLE | PLLCON_PLLC)
+                STR     R3, [R0, #PLLCON_OFS]
+                STR     R1, [R0, #PLLFEED_OFS]
+                STR     R2, [R0, #PLLFEED_OFS]
+
+// set Vector table to RAM placment
+
+         LDR     R0, =MEMMAP
+         MOV     R1, #2
+         STR     R1, [R0]
+
+// Set CPU to USER mode and enable interrupts
+         MSR     CPSR_c, #Mode_USR
+         MOV     SP, R0
+
+
+        bl       _start
 END_FUNC Reset_Handler
+
+
 
 /*************************** End of file ****************************/
