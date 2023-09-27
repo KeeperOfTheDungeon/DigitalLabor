@@ -1,14 +1,20 @@
 /*
- * Aufgabe_9.c
+ * Aufgabe_9.S
  *
- *  Created on: 10.03.2023
- *      Author: tavin
+ *  Created on: <$Date>
+ *      Author: <$Name>
  *
- *	Aufgabe :  Digital Wandlung
+ *	Aufgabe : Analog – Digital Wandlung
  */
 
+#include <stdint.h>
+#include "LPC21XX.h"
 
-int main(void) {
+void FIQ_Handler (void)__attribute__((interrupt ("FIQ")));
+void IRQ (void)__attribute__((interrupt ("IRQ")));
+
+
+int main() {
+
 
 }
-

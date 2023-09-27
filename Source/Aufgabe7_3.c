@@ -1,15 +1,14 @@
 /*
- * Aufgabe_7.3.c
+ * Aufgabe_7_3.S
  *
- *  Created on: 10.03.2023
- *      Author: tavin
+ *  Created on: <$Date>
+ *      Author: <$Name>
  *
- *	Aufgabe :     GPIO-Eingabe
+ *	Aufgabe : Umschaltbares Lauflicht
  */
+#include <stdint.h>
+#include "Aufgabe7_3.h"
 
 int main(void) 
 {
-
 }
-
-/*************************** End of file ****************************/

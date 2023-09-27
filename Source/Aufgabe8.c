@@ -1,24 +1,18 @@
 /*
- * Aufgabe_8.c
+ * Aufgabe_8.S
  *
- *  Created on: 10.03.2023
- *      Author: tavin
+ *  Created on: <$Date>
+ *      Author: <$Name>
  *
- *	Aufgabe :      Interrupts und Timer
+ *	Aufgabe : Interrupts und Timer
  */
 
-
-
-#include "LPC21XX.h"
 #include <stdint.h>
+#include "LPC21XX.h"
 
-
-
+void FIQ_Handler (void)__attribute__((interrupt ("FIQ")));
 void IRQ (void)__attribute__((interrupt ("IRQ")));
 
-void IRQ (void) 
-{
-}
 
 int main() {
 

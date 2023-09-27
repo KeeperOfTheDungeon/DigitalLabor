@@ -1,20 +1,19 @@
 /*
- * Aufgabe_1_1.S
+ * Aufgabe_1_4.S
  *
- *  Created on: 02.10.2020
- *      Author: tavin
+ *  Created on: <$Date>
+ *      Author: <$Name>
  *
- *	Aufgabe : Addition
+ *	Aufgabe : Maskenoperationen
  */
 .text /* Specify that code goes in text segment */
 .code 32 /* Select ARM instruction set */
-.global _start /* Specify global symbol */
-_start:
- 
+.global main /* Specify global symbol */
+main:
+
 
 stop:
-        nop
+	nop
 	bal stop
-       
 
 .end

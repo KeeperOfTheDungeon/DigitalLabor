@@ -1,17 +1,19 @@
 /*
- * Aufgabe_3_3.S
+ * Aufgabe_2_3.S
  *
- *  Created on: 10.03.2023
- *      Author: tavin
+ *  Created on: <$Date>
+ *      Author: <$Name>
  *
- *	Aufgabe : Berechnung der Summe aus fünf Zahlen an fortlaufenden Adressen
+ *	Aufgabe : Werte Binarisieren
  */
 .text /* Specify that code goes in text segment */
 .code 32 /* Select ARM instruction set */
-.global _start /* Specify global symbol */
-_start:
+.global main /* Specify global symbol */
+main:
+
 
 stop:
 	nop
 	bal stop
+
 .end

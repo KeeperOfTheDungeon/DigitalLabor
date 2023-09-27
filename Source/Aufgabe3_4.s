@@ -1,10 +1,10 @@
 /*
- * Aufgabe_1_2.S
+ * Aufgabe_3_4.S
  *
  *  Created on: <$Date>
  *      Author: <$Name>
  *
- *	Aufgabe : Addition von Zahlen
+ *	Aufgabe : nterprogrammaufruf mit Übergebe von mehreren Parametern - Division
  */
 .text /* Specify that code goes in text segment */
 .code 32 /* Select ARM instruction set */

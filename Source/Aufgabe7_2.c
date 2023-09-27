@@ -1,13 +1,14 @@
 /*
- * Aufgabe_7.2.c
+ * Aufgabe_7_2.S
  *
- *  Created on: 10.03.2023
- *      Author: tavin
+ *  Created on: <$Date>
+ *      Author: <$Name>
  *
- *	Aufgabe :    GPIO-Ausgabe
+ *	Aufgabe : GPIO in C
  */
+#include <stdint.h>
+#include "Aufgabe7_2.h"
 
-int main(void) {
-
+int main(void) 
+{
 }
-

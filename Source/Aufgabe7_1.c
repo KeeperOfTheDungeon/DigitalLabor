@@ -1,13 +1,16 @@
 /*
- * Aufgabe_7.1.c
+ * Aufgabe_7_1.S
  *
- *  Created on: 10.03.2023
- *      Author: tavin
+ *  Created on: <$Date>
+ *      Author: <$Name>
  *
- *	Aufgabe :   Bit-Manipulation
+ *	Aufgabe : Bitmanipulation in C
  */
+#include <stdint.h>
+#include "Aufgabe7_1.h"
 
 
-int main(void) {
 
+int main(void) 
+{
 }

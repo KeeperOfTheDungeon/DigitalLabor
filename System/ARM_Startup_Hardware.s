@@ -118,29 +118,6 @@ Additional information:
         END_FUNC \Name
 .endm
 
-
-.macro IRQ_HANDLER Name=
-        //
-        // Insert vector in vector table
-        //
-        .section .vectors, "ax"
-         ldr     PC, =\Name
-        //
-        // Insert dummy handler in init section
-        //
-        .section .init.\Name, "ax"
-        .code 32
-        .type \Name, function
-        .weak \Name
-        .balign 4
-\Name:
-        1:ldr r1,=0xfffff030
-        2:ldr PC,[R1]
-        //1: b 1b   // Endless loop
-
-        END_FUNC \Name
-.endm
-
 //
 // Place a reserved isr handler
 //
@@ -185,9 +162,8 @@ _vectors:
         ISR_HANDLER pabort_handler
         ISR_HANDLER dabort_handler
         ISR_RESERVED
-        IRQ_HANDLER irq_handler
-         
-        ISR_HANDLER fiq_handler
+        ldr     PC, =IRQ_Handler
+        ldr     PC, =FIQ_Handler
 
         .section .vectors, "ax"
         .size _vectors, .-_vectors
@@ -288,6 +264,30 @@ Reset_Handler:
 
 
 
+// setup PLL
+                LDR     R0, =PLL_BASE
+                MOV     R1, #0xAA
+                MOV     R2, #0x55
+
+// Configure and Enable PLL
+                MOV     R3, #PLLCFG_Val
+                STR     R3, [R0, #PLLCFG_OFS]
+                MOV     R3, #PLLCON_PLLE
+                STR     R3, [R0, #PLLCON_OFS]
+                STR     R1, [R0, #PLLFEED_OFS]
+                STR     R2, [R0, #PLLFEED_OFS]
+
+// Wait until PLL Locked
+PLL_Loop:       LDR     R3, [R0, #PLLSTAT_OFS]
+                ANDS    R3, R3, #PLLSTAT_PLOCK
+//                BEQ     PLL_Loop
+
+# Switch to PLL Clock
+                MOV     R3, #(PLLCON_PLLE | PLLCON_PLLC)
+                STR     R3, [R0, #PLLCON_OFS]
+                STR     R1, [R0, #PLLFEED_OFS]
+                STR     R2, [R0, #PLLFEED_OFS]
+
 // set Vector table to RAM placment
 
          LDR     R0, =MEMMAP
@@ -302,6 +302,48 @@ Reset_Handler:
         bl       _start
 END_FUNC Reset_Handler
 
+/*********************************************************************
+*
+*       IRQ_Handler
+*
+*  Function description
+*    Exception handler for reset.
+*    Generic bringup of a system.
+*/
+        .section .init.IRQ_Handler, "ax"
+        .code 32
+        .balign 4
+        .global irq_handler
+        .global IRQ_Handler
+        .equ irq_handler, IRQ_Handler
+        .type IRQ_Handler, function
+        .weak IRQ_Handler
+   IRQ_Handler:
+       ldr r1,=0xfffff030
+       ldr PC,[R1]
+
+END_FUNC IRQ_Handler
 
 
+/*********************************************************************
+*
+*       IRQ_Handler
+*
+*  Function description
+*    Exception handler for reset.
+*    Generic bringup of a system.
+*/
+        .section .init.FIQ_Handler, "ax"
+        .code 32
+        .balign 4
+        .global fiq_handler
+        .global FIQ_Handler
+        .equ fiq_handler, IRQ_Handler
+        .type FIQ_Handler, function
+        .weak FIQ_Handler
+   FIQ_Handler:
+       ldr r1,=0xfffff030
+       ldr PC,[R1]
+
+END_FUNC FIQ_Handler
 /*************************** End of file ****************************/
