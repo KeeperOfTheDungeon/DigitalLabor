@@ -158,6 +158,7 @@ Additional information:
 _vectors:
         ldr     PC, =Reset_Handler
         ISR_HANDLER undef_handler
+      //  ldr     PC, =SWI_Handler
         ISR_HANDLER swi_handler
         ISR_HANDLER pabort_handler
         ISR_HANDLER dabort_handler
@@ -301,6 +302,30 @@ PLL_Loop:       LDR     R3, [R0, #PLLSTAT_OFS]
 
         bl       _start
 END_FUNC Reset_Handler
+
+
+
+/*********************************************************************
+*
+*       SWI_Handler
+*
+*  Function description
+*     Exception handler for software interrupt..
+*    Generic bringup of a system.
+*/
+ /*       .section .init.SWI_Handler, "ax"
+        .code 32
+        .balign 4
+        .global swi_handler
+        .global swi_Handler
+        .equ swi_handler, SWI_Handler
+        .type SWI_Handler, function
+        .weak SWI_Handler
+   SWI_Handler:
+       ldr r1,=0xfffff01c
+       ldr PC,[R1]
+
+END_FUNC SWI_Handler*/
 
 /*********************************************************************
 *

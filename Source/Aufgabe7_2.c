@@ -1,6 +1,8 @@
 /*
  * Aufgabe_7_2.S
  *
+ * SoSe 2024
+ *
  *  Created on: <$Date>
  *      Author: <$Name>
  *

@@ -50,7 +50,9 @@
       <file file_name="Setup/sram_placement.xml" />
     </folder>
     <folder Name="Source">
-      <file file_name="Source/Aufgabe1_1.s" />
+      <file file_name="Source/Aufgabe1_1.s">
+        <configuration Name="Debug" build_exclude_from_build="No" />
+      </file>
       <file file_name="Source/Aufgabe1_2.s">
         <configuration Name="Debug" build_exclude_from_build="Yes" />
       </file>
@@ -102,12 +104,14 @@
       <file file_name="Setup/sram_placement.xml" />
     </folder>
     <folder Name="Source">
-      <file file_name="Source/Aufgabe2_1.s" />
+      <file file_name="Source/Aufgabe2_1.s">
+        <configuration Name="Debug" build_exclude_from_build="Yes" />
+      </file>
       <file file_name="Source/Aufgabe2_2.s">
         <configuration Name="Debug" build_exclude_from_build="Yes" />
       </file>
       <file file_name="Source/Aufgabe2_3.s">
-        <configuration Name="Debug" build_exclude_from_build="Yes" />
+        <configuration Name="Debug" build_exclude_from_build="No" />
       </file>
     </folder>
     <folder Name="System">
@@ -150,7 +154,9 @@
       <file file_name="Setup/sram_placement.xml" />
     </folder>
     <folder Name="Source">
-      <file file_name="Source/Aufgabe3_1.s" />
+      <file file_name="Source/Aufgabe3_1.s">
+        <configuration Name="Debug" build_exclude_from_build="Yes" />
+      </file>
       <file file_name="Source/Aufgabe3_2.s">
         <configuration Name="Debug" build_exclude_from_build="Yes" />
       </file>
@@ -158,7 +164,7 @@
         <configuration Name="Debug" build_exclude_from_build="Yes" />
       </file>
       <file file_name="Source/Aufgabe3_4.s">
-        <configuration Name="Debug" build_exclude_from_build="Yes" />
+        <configuration Name="Debug" build_exclude_from_build="No" />
       </file>
     </folder>
     <folder Name="System">
@@ -203,7 +209,9 @@
       <file file_name="Setup/sram_placement.xml" />
     </folder>
     <folder Name="Source">
-      <file file_name="Source/Aufgabe4_1.s" />
+      <file file_name="Source/Aufgabe4_1.s">
+        <configuration Name="Debug" build_exclude_from_build="No" />
+      </file>
       <file file_name="Source/Aufgabe4_2.s">
         <configuration Name="Debug" build_exclude_from_build="Yes" />
       </file>
@@ -253,7 +261,9 @@
       <file file_name="Setup/sram_placement.xml" />
     </folder>
     <folder Name="Source">
-      <file file_name="Source/Aufgabe5_1.s" />
+      <file file_name="Source/Aufgabe5_1.s">
+        <configuration Name="Debug" build_exclude_from_build="No" />
+      </file>
       <file file_name="Source/Aufgabe5_2.s">
         <configuration Name="Debug" build_exclude_from_build="Yes" />
       </file>
@@ -295,13 +305,21 @@
       project_type="Executable" />
     <configuration
       Name="Debug"
-      debug_initial_breakpoint="_start"
-      debug_startup_completion_point="_start" />
+      arm_linker_svc_stack_size="32"
+      debug_initial_breakpoint="main"
+      debug_startup_completion_point="main"
+      debug_target_connection="J-Link"
+      speed="100" />
     <folder Name="Setup">
       <file file_name="Setup/sram_placement.xml" />
     </folder>
     <folder Name="Source">
-      <file file_name="Source/Aufgabe6.s" />
+      <file file_name="Source/Aufgabe6.s">
+        <configuration Name="Debug" build_exclude_from_build="No" />
+      </file>
+      <file file_name="Source/Aufgabe6b.s">
+        <configuration Name="Debug" build_exclude_from_build="Yes" />
+      </file>
     </folder>
     <folder Name="System">
       <file file_name="System/ARM_Startup_Hardware.s" />
@@ -480,10 +498,10 @@
     </folder>
     <folder Name="Source">
       <file file_name="Source/BeispielAufgabe1_1.s">
-        <configuration Name="Debug" build_exclude_from_build="Yes" />
+        <configuration Name="Debug" build_exclude_from_build="No" />
       </file>
       <file file_name="Source/BeispielAufgabe1_2.s">
-        <configuration Name="Debug" build_exclude_from_build="No" />
+        <configuration Name="Debug" build_exclude_from_build="Yes" />
       </file>
       <file file_name="Source/BeispielAufgabe1_3.s">
         <configuration Name="Debug" build_exclude_from_build="Yes" />
