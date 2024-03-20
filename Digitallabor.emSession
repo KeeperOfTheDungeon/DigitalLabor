@@ -77,18 +77,10 @@
   <ProjectSessionItem path="Digitallabor"/>
   <ProjectSessionItem path="Digitallabor;Aufgabe1"/>
   <ProjectSessionItem path="Digitallabor;Aufgabe1;Source"/>
-  <ProjectSessionItem path="Digitallabor;Aufgabe2"/>
-  <ProjectSessionItem path="Digitallabor;Aufgabe2;Source"/>
-  <ProjectSessionItem path="Digitallabor;Aufgabe4"/>
-  <ProjectSessionItem path="Digitallabor;Aufgabe4;Source"/>
-  <ProjectSessionItem path="Digitallabor;Aufgabe6"/>
-  <ProjectSessionItem path="Digitallabor;Aufgabe6;Source"/>
-  <ProjectSessionItem path="Digitallabor;Aufgabe7"/>
-  <ProjectSessionItem path="Digitallabor;Aufgabe7;Source"/>
-  <ProjectSessionItem path="Digitallabor;Aufgabe8"/>
-  <ProjectSessionItem path="Digitallabor;Aufgabe8;Setup"/>
-  <ProjectSessionItem path="Digitallabor;Aufgabe8;Source"/>
-  <ProjectSessionItem path="Digitallabor;Aufgabe8;System"/>
+  <ProjectSessionItem path="Digitallabor;Aufgabe3"/>
+  <ProjectSessionItem path="Digitallabor;Aufgabe3;Source"/>
+  <ProjectSessionItem path="Digitallabor;Aufgabe9"/>
+  <ProjectSessionItem path="Digitallabor;Aufgabe9;Source"/>
  </Project>
  <Register1>
   <RegisterWindow visibleNodes="CPU - Current Context/r0;CPU - Current Context/r1;CPU - Current Context/r2;CPU - Current Context/r3;CPU - Current Context/r4;CPU - Current Context/r5;CPU - Current Context/r6;CPU - Current Context/r7;CPU - Current Context/r8;CPU - Current Context/r9;CPU - Current Context/r10;CPU - Current Context/r11;CPU - Current Context/r12;CPU - Current Context/sp(r13);CPU - Current Context/lr(r14);CPU - Current Context/pc(r15);CPU - Current Context/apsr;CPU/r0;CPU/r1;CPU/r2;CPU/r3;CPU/r4;CPU/r5;CPU/r6;CPU/r7;CPU/r8;CPU/r9;CPU/r10;CPU/r11;CPU/r12" binaryNodes="" asciiNodes="" openNodes="CPU - Current Context" name="Executable_1_Debug" decimalNodes="" octalNodes="" unsignedNodes=""/>
@@ -165,10 +157,7 @@
   <Watches active="0" update="Never"/>
  </Watch4>
  <Files>
-  <SessionOpenFile windowGroup="DockEditLeft" x="2" y="4" useTextEdit="1" path="Source/Aufgabe1_1.s" left="0" top="0" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="1" y="3" useTextEdit="1" path="Source/Aufgabe1_2.s" left="0" top="0" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="2" y="4" useTextEdit="1" path="Source/Aufgabe1_3.s" left="0" top="0" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="2" y="4" useTextEdit="1" path="Source/Aufgabe1_4.s" left="0" selected="1" top="0" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="0" useTextEdit="1" path="Source/Aufgabe1_1.s" left="0" selected="1" top="0" codecName="Default"/>
  </Files>
- <EMStudioWindow activeProject="Aufgabe8" fileDialogDefaultFilter="*.asm;*.s;*.inc" autoConnectTarget="J-Link" buildConfiguration="Debug" sessionSettings="" debugSearchFileMap="" fileDialogInitialDirectory="C:/hs/dtl/Workspace_DTL/Source" debugSearchPath="" autoConnectCapabilities="3199"/>
+ <EMStudioWindow activeProject="Aufgabe1" fileDialogDefaultFilter="*.asm;*.s;*.inc" autoConnectTarget="Simulator" buildConfiguration="Debug" sessionSettings="" debugSearchFileMap="" fileDialogInitialDirectory="C:/hs/dtl/Workspace_DTL/Source" debugSearchPath="" autoConnectCapabilities="4415"/>
 </session>
