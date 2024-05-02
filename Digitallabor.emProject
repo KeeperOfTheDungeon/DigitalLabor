@@ -97,8 +97,8 @@
       project_type="Executable" />
     <configuration
       Name="Debug"
-      debug_initial_breakpoint="_start"
-      debug_startup_completion_point="_start"
+      debug_initial_breakpoint="main"
+      debug_startup_completion_point="main"
       debug_target_connection="Simulator" />
     <folder Name="Setup">
       <file file_name="Setup/sram_placement.xml" />
@@ -148,8 +148,8 @@
       project_type="Executable" />
     <configuration
       Name="Debug"
-      debug_initial_breakpoint="_start"
-      debug_startup_completion_point="_start" />
+      debug_initial_breakpoint="main"
+      debug_startup_completion_point="main" />
     <folder Name="Setup">
       <file file_name="Setup/sram_placement.xml" />
     </folder>
